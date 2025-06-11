@@ -6,7 +6,12 @@ so you just pass the directory as the parameter and run.sh
 will sort out whether it's a file or a directory. That's easy
 enough to do.
 
-**rklb_notify**  
-`0 8 * * 2-6 $HOME/cron_python/run.sh rklb-price`
+**rrklb-price**  
+Uses yfinance to fetch the close price and change for Rocketlab (RKLB) and squirt it to my phone using ntfy.sh.  
+
+Crontab entry  
+```cron
+0 8 * * 2-6 $HOME/cron_python/run.sh rklb-price
+```
 
 
