@@ -7,6 +7,7 @@ name = "pypi"
 httpx = "*"
 yfinance = "*"
 python-dotenv = "*"
+asyncssh = "*"
 
 [dev-packages]
 
