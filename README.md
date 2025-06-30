@@ -6,7 +6,7 @@ so you just pass the directory as the parameter and run.sh
 will sort out whether it's a file or a directory. That's easy
 enough to do.
 
-**rrklb-price**  
+**rklb-price**  
 Uses yfinance to fetch the close price and change for Rocketlab (RKLB) and squirt it to my phone using ntfy.sh.  
 
 Crontab entry  
@@ -14,4 +14,11 @@ Crontab entry
 0 8 * * 2-6 $HOME/cron_python/run.sh rklb-price
 ```
 
+**sensors-check**  
+Checks a remote sqlite DB over SSH to make sure they're checking in regularly and nothing untoward has happened.
+Using SSH is easier than having a Web API in this case since it's just over the local network.
 
+Crontab entry  
+```cron
+*/15 * * * * $HOME/cron_python/run.sh sensors-check
+```
