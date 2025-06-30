@@ -34,9 +34,9 @@ def send_notification(title: str, message: str, emojis: list[str] = [], priority
                                password=os.getenv("NTFY_PASSWORD"))
         
         client = httpx.Client(auth=auth, timeout=10)
-        logger.info(f"Sending notification to {os.getenv('NTFY_HOST')}/{os.getenv('NTFY_TOPIC')}")
+        logger.info(f"Sending notification to {os.getenv('NTFY_HOST')}/{os.getenv('NTFY_EOD_TOPIC')}")
         response = client.post(
-            f"{os.getenv('NTFY_HOST')}/{os.getenv('NTFY_TOPIC')}",
+            f"{os.getenv('NTFY_HOST')}/{os.getenv('NTFY_EOD_TOPIC')}",
             data=message,
             headers={
                 "Title": title,
